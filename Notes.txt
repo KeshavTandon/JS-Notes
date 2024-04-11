@@ -1,0 +1,177 @@
+Javascript is Dynamically typed language(loosely typed)-variable type checking takes place at runtime or execution time
+
+Q Different data types in JS
+-Primitive-Number-both integer and float
+          -String-series of character 
+          -Boolean-true or false
+          -Null-it means nothing
+          -Undefined-value is not defined
+          -Symbol-returns unique identifiers
+          -BigInt-provides way to represent whole numbers
+-Non-primitive-Object   
+
+Q Difference between var,let and const?
+ -Var-globally/locally scoped-If we declare same variable again and change it,it will get changed ..the problem is that is we dont know we have already declared the variable and change it then it will make unexpected output.
+
+ -Let-It is blocked scoped-It can be updated but not redeclared.While var is initialised at the top,let is not we will get refernce error.
+
+ -const-It is blocked scoped-It cannot be updates neither reinitiliased.Hoising is done at the top but not initialised just like let.
+
+ Q What is temporal dead zone?
+ - let and const lies in this.They lies in this until the start of the scope to the time until they are declared.If we try to access in this we will get the refernce error.
+
+ Q What is Hoisting?
+  -It allows to use functions and variables even before they are declared..In case of var it is initialies with undefined..whereas in cases of let and const will throw and refernce error.
+
+ Q What are closures?
+  -It is concept of JS in which we can inner function can access the scope chain of outer function and its lexical environment.
+
+ Q What is lexical environment?
+  -It is the concept of accessibility of the functions and the variables.Eg-Block Scope,Global scope.
+
+ Q What are callbacks?
+  -It is used to handle the asynchronous operations in an non-blocking manner eg network request,fetching from db takes time.So if they are executed synchronously then they will freeze the program and wait for the operation to finish.Meanwhile using callbacks will allow to execute program parellaly and when the operation is completed then the callback function is called with the result of the operation.
+
+ Q How JS Works?
+ -First the global execution context is created which has 2 phases-Memory Execution,Code Execution
+
+ Q String Coehersion?
+ - if there is '+' and there are 2 different data types such as string and number then the number is converted to the string and if there is '-' then the string is converted to the number.
+
+ Q What is an Immediately Invoked Function in JavaScript?
+ -These are the functions that run as soon as it is declared.
+
+ Q What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+ -In strict mode all kinds of errors are thrown which helps in debugging.
+
+Q Explain Higher Order Functions in javascript.
+-It is also known as First-class citizens.It takes function as an argument and also returns functions.
+
+Cohersion->Type conversion(implicit conversion->automatically done by the language)
+Abstract Operation->It is set of operations/algorithms that js do internally.We as developers cannot use it.It is there in docs to support the documentation.
+
+1-"0xa"->1-10->-9 because 0x is hexadecimal which is base 10 and a represent 10.
+
+Two phases of JS code Execution->
+  ->Parsing-In this all the variables get allocated their corresponding scope.We only care about formal declarations i.e which are declared using var,let,const. 
+  ->Execution-
+
+3 types of scopes->
+  ->Global Scope
+  ->Function Scope
+  ->Block Scope  
+
+var->Either function scoped or global scoped,allows redeclarations
+let->block scoped,doesnot allow redeclarations
+
+Note-Lines after let will get access to it in that block but in case of var it will be accessible throughout the program.
+
+Temporal Dead Zone->It means the we cannot access the content declared by block scoped i.e let before the declarations.
+
+IIFE(Immediately Invoked function expression)->these are invoked Immediately during the declaration.
+
+Advantage of named function expression over anonymous function expression->
+ ->Readability
+ ->How recursive calls will be made
+ ->console.trace() which is used for tracing the call stack calls will be having no name of the anonymous function which will be difficult to debug.
+
+Higher Order Function->Function which take another function as argument or return function as argument are known as HOF.
+
+map->It is HOF which iterates through each element and return result in an array.
+Eg-> function square(x){
+    return x*x;
+    }
+    const number=[1,2,3,4,5,5];
+    number.map(square)
+
+    OUTPUT->[1,4,9,16,25,25];
+Note-we dont have to do square() as it will call the function immmediately and we dont want that. Map will internally handle it and return an array.
+    -If we have 2 arguments in the function then the first will be the actual value and second will be the index.
+
+->arr.sort()-By default the implementation of this is that is sorts an array in lexographical order rathe than increasing order.
+
+->Reduce- reduce is HOF which will iterate through every element and pass this element to the function and accumulate the result of further function calls with the particular result.
+
+Callback Function-Lets say we have a HOF which takes function as an argument so the fucntion which is passed as argument is known as callback function.
+
+Problems with Callbacks->
+1-Callback Hell(Readability problem)->When there is nesting of callbacks it becomes hard to read and debug.
+So when we pass in function a callback and then that callback has another callback and so on.
+
+2-Inversion of Control->When we give control of callback to someone else.It inverts the control and puts them in charge of executing the code.
+Disadvantages->
+  -Callback maybe called multiple times 
+  -Callback would never be called
+  -Callback may be callled synchronously
+
+How JS Code is executed?
+->There is a Call Stack in which all the functions are pushed for a track.
+ JS will block other code and will stick to that work which is native to js.
+ Any async task or task which are supported by run time if occur, JS will tell the run time i have a async task and the timer will start.
+ Now lets suppose the timer completes then that piece of task is pushed in the event queue and will wait for the execution.
+ There is a event loop which is kind of infinite loop which will keep on checking whether the call stack is empty or not.
+ When all the functions of js will be executed and call stack will be empty then the task from event queue will be pushed onto the stack for the execution.
+
+Promises->They are special kind of objects that get returned Immediately when we call them.They acts as a placeholder for the data we hope to get back in future.
+It has 3 states->
+Pending-Default state
+Fulfilled-
+Rejected-
+
+Syntax-
+new Promise(function(resolve,reject){
+
+})
+
+Whenever in the implementation of executor callback we call resolve function then the promise will go in fulfilled state.If we call reject function then it will go in rejected state and if we dont call them then promise will remain in pending state.
+
+Once the promise is resolved or reject then the state cannot be changed.
+If we pass multiple values then it will only take 1st value.
+Statements after resolve() or reject() will also be executed.
+
+.then will register the fullfillment and rejection handler to the promise arrays
+
+Promise have value,state,onFullfilment array,onRejection array
+All the handlers get stores in these arrays.
+These functions when promise state is changed goes to microtask queue.
+Microtask queue has more priority than callback queue.
+
+Note->Runtime features such as setTimeout,setInterval which are provided by runtime will go in callback queue after completion but the promises will go in microtask queue which has more priority than callback queue. Event loop will keep on checking the call stack and global piece of code for whether it is empty or not.
+
+Closures-Closure gives us the access to an outer function's scope from an inner function.Everytime function is created there is a closure property associated with it which exactly remembers the scope of every variable inside the function and to its lexical environment.
+
+Types of Programming Languages->
+ -Imperative->in which we have to provide all the steps like what to do,how to do and from where to do.Eg-C,C++,Java
+ -Declarative->in which there is already rules defined.Eg-SQL
+
+Iterators-It is object which return value after termination.The object has 2 properties {value,done} value returs next() and done is false until the whole array is consumed and then value will be undefined. 
+
+Generators-They allows us to write iterative algorithm whose execution is not continuous.We can create it by function* . When we call the function instead of executing the function it returns a special iterator.
+When we call next() then the generator  function execution is consumed until all the value is consumed.
+
+Yeild->It is used to resume or pause the execution.The value is returned which is specified in yeild.If there is no value specified then undefined is returned.
+
+Async Await->Instead of function generator we can make function as async which will return a promise.Istead of yield we can do await which acts same but we dont have to manually do iter.next() again and again it will automatically do.
+
+////////////////////////OOPS////////////////////////
+Classes-They are blueprint.They are the mental model of how real life entity will look like.They have properties(data member) and behaviour(member function).It is like template.
+
+Objects-It is instance of a class.All objects will be having different properties which will uniquely identify the 2 objects but they all will be having same behaviour i.e display(), add to wishlist().
+
+This refers to the calling context but it has a special case which is of arrow function.Arrow function will return undefined.
+In arrow function this is resolved lexically.Arrow function donot have this.
+
+There is no concept of constructor overloading in js.We can only have 1 constructor.
+
+We can use getter and setter to set the values
+Syntax set <name>(x){
+  this.#name=x
+}
+
+Prototype->It is a mechanism using which JS objects inherit features from one another.
+
+__proto__->dunder proto from this we can access this prototype chain 
+
+
+
+
