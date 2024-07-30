@@ -1,4 +1,5 @@
-Javascript is Dynamically typed language(loosely typed)-variable type checking takes place at runtime or execution time
+Javascript is Dynamically typed language(loosely typed)-variable type checking takes place at runtime or execution time.
+Javascript is synchronous single threaded language.
 
 Q Different data types in JS
 -Primitive-Number-both integer and float
@@ -172,6 +173,44 @@ Prototype->It is a mechanism using which JS objects inherit features from one an
 
 __proto__->dunder proto from this we can access this prototype chain 
 
+Q How JS code is executed?
+-Everything in js is executed inside execution context.
+-There are 2 components - one is variable environment where all the variables and functions are stored as a key value pair.
+   -Another is thread of execution- in this all the code is executed one line at a time.
 
+Firstly global execution context is created and is pushed inside the call stack.
+There are 2 phases of JS execution->
+1.Memory creation->all the variables and functions are allocated values.variables are initialised with undefined and functions are given the values as the whole code.
+2.Code execution->JS now allocates the value to the vars and funcs.
+Whenever it encounters the function invocation it creates another execution context and the same process is followed there also i.e. memory creation and code execution and also this context is pushed inside call stack.after that the value which is returned from the function is allocated to the variable.
+Then this context is deleted.
 
+Q What is call stack?
+It keeps the track of the order of execution of the execution contexts.
 
+Higher Order function ->Map,Filter,Reduce
+
+Map->
+It iterates to the whole array and for each value of an array we can perform the transformation.
+For eg if we want to double the values of an array.
+
+const arr=[1,2,3,4,5];
+arr.map((x)=>x*2);
+
+Filter->
+Filter is used to filter the values in an array or object.
+For eg is we want to filter odd elements;
+
+const arr=[1,2,3,4,5];
+arr.filter((x)=>x%2!=0);
+
+Reduce->
+It is used to get the single value.
+For ed- if we want to find the sum of elements of an array.
+
+arr.reduce(function(acc,curr){
+  acc=acc+curr;
+  return acc;
+},0);
+
+NOTE-In map and filter new array is created.
