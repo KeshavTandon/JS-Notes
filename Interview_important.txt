@@ -1,0 +1,43 @@
+Q how to run javascript in browser?
+-We can either directly execute in browser console or we can run js through script tag.It can be either inline or external js.
+
+Q Can we write code in browser if yes then where and how?
+-In console,we can direcly execute the code.
+
+Q what are operations in Js?
+-operations in js are way to manipulate the data or we can say control the flow.We can use the loops,if else condition,switch to control the flow.
+
+Q Tags in js?
+-Script tag
+-noscript tag-it is used to display some data when js is not enabled in browser.
+-object and embed-they are used to embed various kind of content such as interactive applications and widgets.
+
+Q Nan in js?
+-Not a number.It occurs for invalid mathematical operations such as 0/0 or log(-1) when mathematical functions receive invalid input
+
+Q How to create dynamic page in Js?
+-By modifying the DOM , we can handle dynamic page.So we can fetch any elements and can attach an event-listener.
+-By taking input from user we can handle the dynamic content.
+
+Q Is JS synchronous or asynchronous?
+-JS is single threaded. It is both depending upon the execution.
+For async-> we can use callbacks,promises,async await.
+So event loop is responsible for this. It constantly checks call stack and queues.
+
+Q Difference between let, var and const?
+-Var is global scoped whereas let and const block scoped.
+-const variable when declared cannot be updated and reinitialised whereas let cannot be redeclared but cannot be updated and var can be both.
+
+Q unshift and shift operator?
+-These are used in array.
+Unshift->adds new element at the beginning of the array and returns the length of an array.
+Eg->let arr=[1,2,3,4,5];
+arr.unshift(10);
+output->6
+
+shift->removes element from the beginning and returns the removed element.
+
+Q prompt().
+-It is used to display dialog box and takes input from the user.
+-It pauses the execution of the code.
+

@@ -16,7 +16,7 @@ Q Difference between var,let and const?
 
  -Let-It is blocked scoped-It can be updated but not redeclared.While var is initialised at the top,let is not we will get refernce error.
 
- -const-It is blocked scoped-It cannot be updates neither reinitiliased.Hoising is done at the top but not initialised just like let.
+ -const-It is blocked scoped-It cannot be updated neither reinitiliased.Hoising is done at the top but not initialised just like let.
 
  Q What is temporal dead zone?
  - let and const lies in this.They lies in this until the start of the scope to the time until they are declared.If we try to access in this we will get the refernce error.
@@ -214,3 +214,19 @@ arr.reduce(function(acc,curr){
 },0);
 
 NOTE-In map and filter new array is created.
+
+
+Web API's->setTimeout,console,DOM API's,fetch(),local storage
+So whenever they are called then js engine calls one of these apis.
+These are not the part of JS.
+
+Event Loop->It constantly checks whether there is something in callback queue and if the call stack is empty then it will push in into call stack.
+
+Callback Queue->whenever timer will expire it will push that into callback queue and from that event loop will continuously checks.
+
+Q What tasks will go under microtask queue?
+-All the tasks that are promise-based comes in microtask queue.
+Mutation observer also goes inside microtask queue.
+
+Mutation observer-> it checks for changes being made  in dom tree and invoke the callback.
+So if we want to Dynamically call the callback when changes are there in dom tree then we can use the mutation observer.
