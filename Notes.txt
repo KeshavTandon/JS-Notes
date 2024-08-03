@@ -93,11 +93,13 @@ Note-we dont have to do square() as it will call the function immmediately and w
 
 ->Reduce- reduce is HOF which will iterate through every element and pass this element to the function and accumulate the result of further function calls with the particular result.
 
-Callback Function-Lets say we have a HOF which takes function as an argument so the fucntion which is passed as argument is known as callback function.
+Callback Function-Callbacks are used to handle the async code in js.
+Lets say we have a HOF which takes function as an argument so the fucntion which is passed as argument is known as callback function.
 
 Problems with Callbacks->
 1-Callback Hell(Readability problem)->When there is nesting of callbacks it becomes hard to read and debug.
 So when we pass in function a callback and then that callback has another callback and so on.
+It is also known as pyramid of doom.
 
 2-Inversion of Control->When we give control of callback to someone else.It inverts the control and puts them in charge of executing the code.
 Disadvantages->

@@ -41,3 +41,57 @@ Q prompt().
 -It is used to display dialog box and takes input from the user.
 -It pauses the execution of the code.
 
+Q What is Hoisting?
+-It is mechanism in which functions and variables declaration are moved on top.
+-By this we can access them even before they are declared.
+
+Q Difference between == and ===?
+== is loose equality whereas === is strict equality.
+== first converts both the values to common type through cohersion whereas === checks for datatype as well.
+
+Q Strict in js?
+- Strict is the more restricted variant in js.
+By this we can prevent accidental declaration as it will throw an error.
+We can also remove auto globals.
+
+Q call,apply,bind in js?
+-Call method Immediately invokes the function with first argument as this and rest can be arguments with comma separated.
+-The only difference between the call and apply is apply takes arguments after this in array list ["",""]
+-Bind returns the copy of the function and after this we can invoke the function.
+
+Q What is Promise?
+-Promise is a placeholder which will be filled later with a value
+-Promise is an object that represents eventual completion or failure of the asynchronous completion.
+
+How it solves the problem of inversion of control?
+-so we can attach a callback function using .then. By this we dont give the access to another function rather we have a control of the function.
+
+Q What is Promise chaining?
+-It is concept in which we initialies another promise with the result of prev promise and we return from it.
+
+Q What is Promise API?
+-promise.all->it is used when we want to make multiple api calls.
+There can be 2 cases-
+1.If all the apis get success then it will display the collective results of all.
+2.If any of the api fails then promise.all will throw an error immediately.
+
+-promise.allSettled-It works same in case of success.
+The difference lies in the failure case.
+So lets say if 3 api calls were made and one of them gets failed so it will wait for everyone else to complete and then throw the result. So the result will be like [val1,error,val2];
+
+-promise.race-It will return the result of first settled promise.In case of success it will give value and in case of error it will throw error.
+
+-promise.any->It will wait until it gets resolve value.
+If all the promises gets rejected then it will throw an aggregated error.
+
+Q What is async?
+-Async is a keyword to make the function async.
+
+Q What is Async function?
+-Async function always returns a promise.
+If we will not return promise then it will wrap that value into promise and then return it.
+
+
+Async and await are used to handle promises.
+
+

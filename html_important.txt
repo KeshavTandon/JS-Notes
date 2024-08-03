@@ -1,0 +1,16 @@
+Q What is placeholder?
+-It is the short description that is desplayed inside the input box till the user doesnt give input.
+
+Q What is frameset?
+-It contains one or more frame elements.
+It specifies how many rows and columns will be present.
+
+Q What is frame?
+It is used to display the content.It has src which is used to point to another html document.
+
+Q What are attributes of frameset?
+-rows and columns which displays number of rows and columns in the frameset.
+
+Q What is iframe?
+-It is used to embed external document such as videos,images or maps.
+<iframe src="">

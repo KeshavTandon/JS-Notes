@@ -1,0 +1,33 @@
+Q Where to write css in html?
+-inline 
+internal
+external
+
+Q What are selectors in css?
+-Universal selector(*)
+-Element selector eg-> p{//css}
+-Class selector (.)
+-Id selector (#)
+Pseudo-class selector (p:hover)
+Pseudo-element selector (::first-line) ->used to style specific parts of element
+
+Q What is margin and padding?
+- These are used to provide spacing to the html elements.
+Margin->It is space outside the border of element.
+Padding->It is space between content of element and its border.
+
+Q What is elements in css?
+-Block Elements->It takes the full width available and starts on a new line.Eg- div,p,h1,h2,li,footer
+
+-Inline Elements->It only takes the necessary space available.Eg- span,img,b,img
+
+-Inline-Block->They are similiar to inline elements but can have height and width.Eg->button,input,img
+
+Q What is grid in css?
+-Grid divides the page into major regions.It aligns element into rows and columnns.
+We use this by grid-template rows,columnns.
+
+Q What is flex in css?
+-It is one-dimensional layout model for distributing space between items.
+We can also align the elements. 
+
