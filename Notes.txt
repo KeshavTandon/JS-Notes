@@ -232,3 +232,21 @@ Mutation observer also goes inside microtask queue.
 
 Mutation observer-> it checks for changes being made  in dom tree and invoke the callback.
 So if we want to Dynamically call the callback when changes are there in dom tree then we can use the mutation observer.
+
+THIS->
+1.Whenever this is used in global space it refers to global object.This global object can be different depending upon where we are running js.In browser it is window object and in Node it is global.
+
+2.this in function behave differently depending upon whether we are running it inside strict mode or not.
+In non strict mode value is global object whereas in case of strict mode value is undefined.
+
+
+Q What is value of this in function?
+value is undefined so there is a concept of this substitution so it is replaced by global object in non strict mode whereas it remains undefined in case of strict mode.
+
+3.The value of this depends upon how the function is called.
+
+4.Arrow functions dont have this.It takes value of enclosing lexical context.
+
+5.value of this in DOM is reference to HTML element.
+
+

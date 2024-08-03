@@ -91,7 +91,9 @@ Q What is Async function?
 -Async function always returns a promise.
 If we will not return promise then it will wrap that value into promise and then return it.
 
-
 Async and await are used to handle promises.
+
+Q Difference between function and method?
+So when function is made inside class then it is known as method.
 
 
